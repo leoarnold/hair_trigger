@@ -1,4 +1,3 @@
-require 'ostruct'
 require 'fileutils'
 require 'active_record'
 require 'hair_trigger/base'
@@ -98,8 +97,9 @@ module HairTrigger
       if previous_schema = (options.has_key?(:previous_schema) ? options[:previous_schema] : File.exist?(schema_rb_path) && File.read(schema_rb_path))
         base_triggers = MigrationReader.get_triggers(previous_schema, options)
         unless base_triggers.empty?
-          version = (previous_schema =~ /ActiveRecord::Schema(\[\d\.\d\])?\.define\(version\: (.*)\)/) && $2.to_i
-          migrations.unshift [OpenStruct.new({:version => version}), base_triggers]
+          match = /ActiveRecord::Schema(\[\d\.\d\])?\.define\(version: (?<version>[0-9_]+)\)/.match(previous_schema)
+          version = match[:version] if match
+          migrations.unshift [ActiveRecord::MigrationProxy.new(nil, version, nil, nil), base_triggers]
         end
       end
 
