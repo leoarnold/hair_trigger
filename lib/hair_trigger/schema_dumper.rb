@@ -30,10 +30,10 @@ module HairTrigger
       migration_triggers = HairTrigger.current_migrations(:in_rake_task => true, :previous_schema => self.class.previous_schema).map do |(_, builder)|
         definitions = []
         builder.generate.each do |statement|
-          if statement =~ /\ACREATE(.*TRIGGER| FUNCTION) ([^ \n]+)/
+          if (match = /\ACREATE(?<type>.*TRIGGER| FUNCTION) (?<name>[^ \n]+)/.match(statement))
             # poor man's unquote
-            type = ($1 == ' FUNCTION' ? :function : :trigger)
-            name = $2.gsub('"', '')
+            type = (match[:type] == ' FUNCTION' ? :function : :trigger)
+            name = match[:name].gsub('"', '')
 
             definitions << [name, statement, type]
           end
