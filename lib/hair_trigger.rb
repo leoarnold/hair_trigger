@@ -8,6 +8,8 @@ require 'hair_trigger/schema_dumper'
 require 'hair_trigger/railtie' if defined?(Rails::Railtie)
 
 module HairTrigger
+  class Error < StandardError; end
+
   POSTGRESQL_ADAPTERS = %i[postgresql postgis]
   MYSQL_ADAPTERS = %i[mysql mysql2rgeo trilogy]
   SQLITE_ADAPTERS = %i[sqlite litedb]
@@ -15,6 +17,7 @@ module HairTrigger
   autoload :Configuration, 'hair_trigger/configuration'
   autoload :Builder, 'hair_trigger/builder'
   autoload :MigrationReader, 'hair_trigger/migration_reader'
+  autoload :Migrations, 'hair_trigger/migrations'
 
   class << self
     attr_writer :model_path, :schema_rb_path, :migration_path, :pg_schema

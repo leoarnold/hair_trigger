@@ -2,8 +2,8 @@ require 'hair_trigger/version'
 
 module HairTrigger
   class Builder
-    class DeclarationError < StandardError; end
-    class GenerationError < StandardError; end
+    class DeclarationError < Error; end
+    class GenerationError < Error; end
 
     attr_accessor :options
     attr_reader :triggers # nil unless this is a trigger group
