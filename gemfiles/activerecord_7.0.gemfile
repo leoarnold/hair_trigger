@@ -5,9 +5,12 @@ source "https://rubygems.org"
 gem "racc", "~> 1.7.3", platforms: [:ruby_33]
 gem "activerecord", "~> 7.0.0"
 gem "activerecord-trilogy-adapter", "~> 3.0.0"
+gem "bigdecimal"
+gem "logger"
+gem "mutex_m"
 gem "mysql2", "~> 0.5"
 gem "pg", ">= 0.18", "< 2.0"
-gem "sqlite3", "~> 1.4.0"
+gem "sqlite3", "~> 1.7"
 
 group :development do
   gem "appraisal"
@@ -15,7 +18,8 @@ group :development do
 end
 
 group :test do
-  gem "rake", "~> 13.0.6"
+  gem "benchmark"
+  gem "rake", "~> 13.3.1"
   gem "rspec", "~> 3.12.0"
 end
 
