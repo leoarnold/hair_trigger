@@ -3,8 +3,7 @@ PATH
   specs:
     hairtrigger (1.3.1)
       activerecord (>= 6.0, < 9)
-      ruby2ruby (~> 2.4)
-      ruby_parser (~> 3.10)
+      prism (~> 1.9)
 
 GEM
   remote: https://rubygems.org/
@@ -42,7 +41,7 @@ GEM
     mutex_m (0.2.0)
     mysql2 (0.5.5)
     pg (1.5.4)
-    racc (1.7.3)
+    prism (1.9.0)
     rake (13.0.6)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
@@ -57,12 +56,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.1)
-    ruby2ruby (2.5.0)
-      ruby_parser (~> 3.1)
-      sexp_processor (~> 4.6)
-    ruby_parser (3.20.3)
-      sexp_processor (~> 4.16)
-    sexp_processor (4.17.0)
     sqlite3 (1.4.4)
     thor (1.3.0)
     timeout (0.4.1)
@@ -80,7 +73,6 @@ DEPENDENCIES
   hairtrigger!
   mysql2 (~> 0.5)
   pg (>= 0.18, < 2.0)
-  racc (~> 1.7.3)
   rake (~> 13.0.6)
   rspec (~> 3.12.0)
   sqlite3 (~> 1.4.0)

@@ -3,7 +3,6 @@ appraise "activerecord-6.1" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 1.4.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
 
 appraise "activerecord-7.0" do
@@ -12,7 +11,6 @@ appraise "activerecord-7.0" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 1.4.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
 
 appraise "activerecord-7.1" do
@@ -20,7 +18,6 @@ appraise "activerecord-7.1" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 1.4.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
 
 appraise "activerecord-7.2" do
@@ -28,7 +25,6 @@ appraise "activerecord-7.2" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 1.4.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
 
 appraise "activerecord-8.0" do
@@ -36,7 +32,6 @@ appraise "activerecord-8.0" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 2.1.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
 
 appraise "activerecord-edge" do
@@ -45,5 +40,4 @@ appraise "activerecord-edge" do
   gem "mysql2", "~> 0.5"
   gem "pg", ">= 0.18", "< 2.0"
   gem "sqlite3", "~> 2.1.0"
-  gem "racc", '~> 1.7.3', platforms: [:ruby_33]
 end
